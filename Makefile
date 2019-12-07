@@ -7,4 +7,4 @@ CppTest:
 	echo b
 
 GLESTest:
-	echo c
+	cd ./Projects/OpenGLES_2.0_Test/ && $(MAKE)
