@@ -1,0 +1,4 @@
+all:
+BgfxTest:
+CppTest:
+GLESTest:
