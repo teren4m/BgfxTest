@@ -1,6 +1,8 @@
+BIN = ../../bin/CppTest
 CC = g++
 COMPILER_FLAGS = -w
-LINKER_FLAGS = -lSDL2 -lGL -lX11 -ldl -lpthread -lrt
+LINKER_FLAGS = -lpthread 
+CPP_VERSION = -std=c++2a
 
 all : main.cpp
-	$(CC) main.cpp -o main $(COMPILER_FLAGS) $(LINKER_FLAGS) 
+	$(CC) $(COMPILER_FLAGS) $(CPP_VERSION) main.cpp -o $(BIN) $(LINKER_FLAGS) 

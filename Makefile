@@ -4,7 +4,7 @@ BgfxTest:
 	cd ./Projects/BgfxTest/ && $(MAKE)
 
 CppTest:
-	echo b
+	cd ./Projects/CppTest/ && $(MAKE)
 
 GLESTest:
 	cd ./Projects/OpenGLES_2.0_Test/ && $(MAKE)
