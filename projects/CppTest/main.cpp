@@ -1,5 +1,10 @@
 #include <stdio.h>
 #include <typeinfo>
+#include <memory>
+#include <string>
+#include <cctype>
+#include <algorithm>
+
 //#include <rxcpp/rx-lite.hpp>
 //#include <rxcpp/operators/rx-take.hpp>
 
@@ -11,7 +16,7 @@
 //using namespace rxcpp::util;
 
 using namespace std;
-using namespace std::chrono;
+//using namespace std::chrono;
 
 //future<void> intervals(){
 
@@ -42,21 +47,21 @@ void C11()
 	};
 
 	Option o = Option::None;
-	printf("Enum type: %s \n", typeid(o).name());
+	printf("Enum type: %s\n", typeid(o).name());
 
 	unique_ptr<int> p1(new int(1234));
-	printf("p1 unique_ptr: %d %d \n", *p1.get(), p1.get());
+	printf("p1 unique_ptr: %d %p\n", *p1.get(), p1.get());
 	unique_ptr<int> p2 = move(p1);
-	printf("p2 unique_ptr: %d %d \n", *p2.get(), p2.get());
-	printf("p1 unique_ptr: %d \n", p1.get());
+	printf("p2 unique_ptr: %d %p\n", *p2.get(), p2.get());
+	printf("p1 unique_ptr: %p\n", p1.get());
 
 	auto p1_shared = make_shared<int>(1234);
 	printf(
-		"p1_shared shared_ptr: %d %d %d \n", 
+		"p1_shared shared_ptr: %d %p %ld\n", 
 		*p1_shared.get(), p1_shared.get(), p1_shared.use_count());
 	shared_ptr<int> p2_shared = p1_shared;
 	printf(
-		"p2_shared shared_ptr: %d %d %d \n", 
+		"p2_shared shared_ptr: %d %p %ld\n", 
 		*p2_shared.get(), p2_shared.get(), p2_shared.use_count());
 
 	weak_ptr<int> wp = p1_shared;
@@ -70,7 +75,7 @@ void C11()
 	p2_shared.reset();
 	printf("wp expired %s \n", (wp.expired()?"true":"false"));
 
-	auto finded = find_if(
+	auto finded = std::find_if(
 		begin(arr), end(arr), 
 		[](int it) { return it % 2 == 0;}
 		);

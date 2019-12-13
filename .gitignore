@@ -1,4 +1,1 @@
-*.anjuta
-main
-Projects/bin/*
-bgfx/.build/
+build/
