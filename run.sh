@@ -13,5 +13,5 @@ echo $'\n'
 cmake --build .
 cd ..
 echo $'\n'
-./$BUILD_DIRECTORY/CppTest/CppTest
+./$BUILD_DIRECTORY/projects/CppTest/CppTest
 echo $'\n'
