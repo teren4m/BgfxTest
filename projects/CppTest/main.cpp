@@ -1,21 +1,21 @@
 #include <stdio.h>
 #include <typeinfo>
-#include <rxcpp/rx-lite.hpp>
-#include <rxcpp/operators/rx-take.hpp>
+//#include <rxcpp/rx-lite.hpp>
+//#include <rxcpp/operators/rx-take.hpp>
 
-#include <rxcpp/rx-coroutine.hpp>
+//#include <rxcpp/rx-coroutine.hpp>
 
-using namespace rxcpp;
-using namespace rxcpp::sources;
-using namespace rxcpp::operators;
-using namespace rxcpp::util;
+//using namespace rxcpp;
+//using namespace rxcpp::sources;
+//using namespace rxcpp::operators;
+//using namespace rxcpp::util;
 
 using namespace std;
 using namespace std::chrono;
 
-future<void> intervals(){
+//future<void> intervals(){
 
-}
+//}
 
 template <typename T, typename E>
 auto add(T x, E y) -> decltype(x + y)
