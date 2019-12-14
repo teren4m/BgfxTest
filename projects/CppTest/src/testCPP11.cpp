@@ -4,23 +4,9 @@
 #include <string>
 #include <cctype>
 #include <algorithm>
-
-//#include <rxcpp/rx-lite.hpp>
-//#include <rxcpp/operators/rx-take.hpp>
-
-//#include <rxcpp/rx-coroutine.hpp>
-
-//using namespace rxcpp;
-//using namespace rxcpp::sources;
-//using namespace rxcpp::operators;
-//using namespace rxcpp::util;
+#include <chrono>
 
 using namespace std;
-//using namespace std::chrono;
-
-//future<void> intervals(){
-
-//}
 
 template <typename T, typename E>
 auto add(T x, E y) -> decltype(x + y)
@@ -80,11 +66,4 @@ void C11()
 		[](int it) { return it % 2 == 0;}
 		);
 		printf("Finded odd: %d \n", *finded);
-}
-
-int main(int argc, char *args[])
-{
-	C11();
-	printf("Hello world \n");
-	return 0;
 }
